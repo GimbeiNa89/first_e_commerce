@@ -1,10 +1,12 @@
 import { ICart } from "./cart.type";
-import { IPayment } from "./payment.type";
+import { ICard } from "./card.type";
+import { IUser } from "./user.type";
 
 export interface IOrder {
   id: string;
+  user: IUser;
   cart: ICart;
-  payment: IPayment;
+  card: ICard;
   coupon: number;
-  expeditionCost: string;
+  expeditionCost: boolean;
 }

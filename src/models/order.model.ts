@@ -1,15 +1,20 @@
 import mongoose from "mongoose";
 import { IOrder } from "../types/order.type";
 import { Cart } from "./cart.model";
-import { ICart } from "../types/cart.type";
+import { User } from "./user.model";
 
 const orderSchema = new mongoose.Schema<IOrder>({
+  user: {
+    type: User,
+    required: true,
+  },
+
   cart: {
     type: Cart,
     required: true,
   },
 
-  payment: {
+  card: {
     type: Number,
     required: true,
   },

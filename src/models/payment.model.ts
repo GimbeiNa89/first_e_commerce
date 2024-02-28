@@ -1,31 +1,12 @@
 import mongoose from "mongoose";
-import { IPayment } from "../types/payment.type";
+import { Card } from "./card.model";
+import { IPayment } from "../types/paymnet.type";
 
 const paymentSchema = new mongoose.Schema<IPayment>(
   {
-    name: {
-      type: String,
-      require: true,
-    },
-
-    surname: {
-      type: String,
-      require: true,
-    },
-
-    pan: {
-      type: Number,
-      require: true,
-    },
-
-    cvc: {
-      type: Number,
-      require: true,
-    },
-
-    expire: {
-      type: Date,
-      require: true,
+    card: {
+      type: Card,
+      required: true,
     },
   },
 
